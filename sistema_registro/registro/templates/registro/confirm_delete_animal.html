@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Animal</title>
+</head>
+<body>
+    <h1>Excluir Animal</h1>
+    <p>Tem certeza que deseja excluir o animal <strong>{{ animal.nome }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+    </form>
+    <a href="{% url 'lista_animais' %}">Cancelar</a>
+</body>
+</html>

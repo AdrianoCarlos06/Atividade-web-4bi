@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Espécie</title>
+</head>
+<body>
+    <h1>Excluir Espécie</h1>
+    <p>Tem certeza que deseja excluir a espécie <strong>{{ especie.nome }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+    </form>
+    <a href="{% url 'lista_especies' %}">Cancelar</a>
+</body>
+</html>

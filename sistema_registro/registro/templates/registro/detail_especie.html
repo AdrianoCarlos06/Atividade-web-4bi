@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes da Espécie</title>
+</head>
+<body>
+    <h1>Detalhes da Espécie</h1>
+    <p><strong>Nome:</strong> {{ especie.nome }}</p>
+    <h2>Animais dessa Espécie:</h2>
+    <ul>
+        {% for animal in especie.animal_set.all %}
+            <li>
+            <a href="{% url 'detalhe_animal' animal.id %}">{{animal.nome }}</a>
+        </li>
+        {% empty %}
+            <p>Não há animais cadastrados para esta espécie.</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'lista_especies' %}">Voltar para lista de espécies</a>
+</body>
+</html>

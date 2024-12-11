@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if especie %}Editar Espécie{% else %}Nova Espécie{% endif %}</title>
+</head>
+<body>
+    <h1>{% if especie %}Editar Espécie{% else %}Nova Espécie{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ especie.nome|default_if_none:'' }}" required>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'lista_especies' %}">Voltar</a>
+</body>
+</html>

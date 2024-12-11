@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Animal</title>
+</head>
+<body>
+    <h1>Detalhes do Animal</h1>
+    <p><strong>Nome:</strong> {{ animal.nome }}</p>
+    <p><strong>Idade:</strong> {{ animal.idade }} anos</p>
+    <p><strong>Espécie:</strong> <a href="{% url 'detalhe_especie' animal.especie.id %}">{{animal.especie.nome }}</a></p>
+    <a href="{% url 'lista_animais' %}">Voltar para lista de animais</a>
+</body>
+</html>

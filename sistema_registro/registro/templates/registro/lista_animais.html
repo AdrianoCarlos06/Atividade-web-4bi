@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Animais</title>
+</head>
+<body>
+    <h1>Animais</h1>
+    <a href="{% url 'novo_animal' %}">Novo Animal</a>
+    <ul>
+        {% for animal in animais %}
+            <li>
+                <a href="{% url 'detalhe_animal' animal.id %}">{{animal.nome }}</a> -- especie: ({{ animal.especie.nome }})
+                <a href="{% url 'editar_animal' animal.id %}">Editar</a>
+                <a href="{% url 'confirmar_exclusao_animal' animal.id %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Voltar</a>
+    <li><a href="{% url 'lista_especies' %}">Gerenciar Espécies</a></li>
+</body>
+</html>
